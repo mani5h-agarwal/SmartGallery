@@ -10,12 +10,14 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Dimensions,
+  StatusBar,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as MediaLibrary from "expo-media-library";
 import { Ionicons } from "@expo/vector-icons";
 import SearchBar from "./SearchBar";
 import Feather from "@expo/vector-icons/Feather";
+import * as NavigationBar from "expo-navigation-bar";
 
 const PhotoItem = memo(({ item, onPress }) => {
   return (
@@ -52,6 +54,14 @@ const PhotoGallery = () => {
     };
     loadTheme(); 
   }, []);
+
+  
+  useEffect(() => {
+    // Change Navigation Bar Color based on Theme
+    NavigationBar.setBackgroundColorAsync(
+      colorTheme === "light" ? "#ffffff" : "#000000"
+    );
+  }, [colorTheme]);
 
   const fetchPhotos = async () => {
     if (!hasNextPage || isLoading) return;
@@ -104,12 +114,15 @@ const PhotoGallery = () => {
   }
 
   return (
-    <View
+    <SafeAreaView
       style={[
         styles.container,
         { backgroundColor: colorTheme === "light" ? "#fff" : "#000" },
       ]}
     >
+      <StatusBar backgroundColor={
+        colorTheme === "light" ? "#fff" : "#000"
+      } />
       <View style={styles.header}>
         <Text
           style={[
@@ -163,7 +176,7 @@ const PhotoGallery = () => {
           )}
         </SafeAreaView>
       </Modal>
-    </View>
+    </SafeAreaView>
   );
 };
 
