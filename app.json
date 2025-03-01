@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Smart Gallery",
-    "slug": "smart-gallery",
+    "slug": "my-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/appIcon.png",
@@ -18,7 +18,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/appIcon.png",
+        "foregroundImage": "./assets/AdaptiveAppIcon.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.anonymous.smartgallery"
@@ -30,6 +30,7 @@
       "eas": {
         "projectId": "9d17aa17-65fe-4e3f-9c64-8582e664001b"
       }
-    }
+    },
+    "owner": "mani5h"
   }
 }
