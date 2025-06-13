@@ -1,3 +1,4 @@
+import OldPhotoGallery from "./views/OldPhotoGallery";
 import PhotoGallery from "./views/PhotoGallery";
 
 

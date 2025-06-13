@@ -1,8 +1,7 @@
 
 
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import {
-  View,
   TextInput,
   StyleSheet,
   TouchableWithoutFeedback,
@@ -23,7 +22,6 @@ const SearchBar = ({
   const searchAnim = useRef(new Animated.Value(0)).current;
   const inputRef = useRef(null);
 
-  // Animation when component mounts
   useEffect(() => {
     Animated.spring(searchAnim, {
       toValue: 1,
@@ -105,7 +103,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#f0f0f0",
     borderRadius: 12,
     paddingHorizontal: 12,
-    marginBottom: 10,
     marginHorizontal: 15,
     height: 50,
     borderWidth: 1,
