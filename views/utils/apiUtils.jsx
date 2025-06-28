@@ -40,7 +40,7 @@ export const uploadImage = async (uri) => {
 export const searchPhotos = async (query) => {
   try {
     const user_id = await getOrCreateUserId();
-
+    console.log("Searching for photos with query:", query, "and user_id:", user_id);
     const response = await fetch(`${url}/search`, {
       method: "POST",
       headers: {
@@ -59,6 +59,7 @@ export const searchPhotos = async (query) => {
     }
 
     const data = await response.json();
+    console.log("Search results:", data);
     return data.image_filenames || [];
   } catch (error) {
     console.error("Search error:", error);
