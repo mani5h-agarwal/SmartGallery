@@ -2,6 +2,12 @@
 
 A semantic image search mobile app that allows users to find photos from their gallery collections using natural language queries.
 
+# 📱 App Screenshots
+<img src="assets/1.jpeg" alt="Search Result" width="300"/>
+<img src="assets/2.jpeg" alt="Search Result" width="300"/>
+
+Smart Gallery in action - semantic search made simple
+
 ## 🚀 Features
 
 - **Semantic Image Search**: Find photos using natural language descriptions like "sunset at the beach" or "dog playing in park"
