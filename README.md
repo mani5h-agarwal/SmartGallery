@@ -9,15 +9,28 @@ A semantic image search mobile app that allows users to find photos from their g
 - **Real-time Search**: Instant results with optimized performance for mobile devices
 - **Intuitive Interface**: Clean React Native UI with image preview and smooth navigation
 - **Efficient Backend**: Vector similarity search with PyTorch model serving and optimized embedding storage
+- **Cross-platform**: Built with React Native Expo for iOS and Android compatibility
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React Native
-- **AI/ML**: Vision Transformer (ViT), BERT, PyTorch
-- **Backend**: Vector similarity search
-- **Training**: Contrastive learning for image-text alignment
+**Frontend**
+- React Native with Expo
+- JavaScript/TypeScript
+
+**AI/ML**
+- Vision Transformer (ViT) for image encoding
+- BERT for text understanding
+- PyTorch for model training and inference
+- Contrastive learning for multimodal alignment
+
+**Backend**
+- Vector similarity search
+- RESTful API for model serving
+- Optimized embedding storage
 
 ## 📊 Related Kaggle Notebooks
+
+Explore the complete development pipeline through these comprehensive notebooks:
 
 - 📊 [Model Training Notebook](https://www.kaggle.com/code/mani5hagarwal/smart-gallery-train) - Complete model training pipeline using image-text alignment
 - 🧠 [Inference Notebook](https://www.kaggle.com/code/mani5hagarwal/inference-smart-gallery) - Inference logic for querying image embeddings with text inputs
@@ -25,68 +38,101 @@ A semantic image search mobile app that allows users to find photos from their g
 
 ## 🏗️ Architecture
 
-The app uses a multimodal embedding system that:
-1. Encodes images using Vision Transformer (ViT)
-2. Processes text queries using BERT
-3. Aligns image and text embeddings through contrastive learning
-4. Performs efficient vector similarity search for real-time results
+The app uses a sophisticated multimodal embedding system:
+
+1. **Image Encoding**: Photos are processed and converted to high-dimensional embeddings using Vision Transformer (ViT)
+2. **Text Processing**: Natural language queries are encoded using BERT
+3. **Multimodal Alignment**: Image and text embeddings are aligned through contrastive learning
+4. **Vector Search**: Efficient similarity search enables real-time retrieval of relevant images
+
+```
+[User Query] → [BERT Encoder] → [Text Embedding]
+                                      ↓
+[Vector Similarity Search] ← [Stored Image Embeddings] ← [ViT Encoder] ← [Gallery Images]
+                                      ↓
+[Ranked Results] → [Mobile UI] → [User]
+```
 
 ## 🎯 How It Works
 
-1. **Image Processing**: Photos are processed and converted to high-dimensional embeddings using ViT
-2. **Query Understanding**: Natural language queries are encoded using BERT
-3. **Similarity Matching**: Vector similarity search finds the most relevant images
-4. **Real-time Results**: Optimized mobile interface displays results instantly
+1. **Image Indexing**: When photos are added to the gallery, they are processed by the ViT model to generate semantic embeddings
+2. **Query Processing**: User's natural language queries are encoded using BERT into the same embedding space
+3. **Similarity Matching**: Vector similarity search finds the most semantically relevant images
+4. **Real-time Display**: Results are ranked and displayed instantly in the mobile interface
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
+- Node.js (v14 or higher)
 - React Native development environment
-- Python (for backend model serving)
+- Expo CLI
+- Python 3.8+ (for backend model serving)
 - PyTorch
 
 ### Installation
 
-1. Clone the repository
-```bash
-git clone https://github.com/mani5h-agarwal/Swift-Share.git
-cd Swift-Share
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/mani5h-agarwal/SmartGallery.git
+   cd SmartGallery
+   ```
 
-2. Install dependencies
-```bash
-npm install
-```
+2. **Install frontend dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-3. Set up the backend (refer to the Backend Logic Notebook for detailed setup)
+3. **Set up the backend**
+   
+   Refer to the [Backend Logic Notebook](https://www.kaggle.com/code/mani5hagarwal/smartgallery-backend) for detailed setup instructions including:
+   - Model download and setup
+   - API endpoint configuration
+   - Environment variables
 
-4. Run the app
-```bash
-npx react-native run-android
-# or
-npx react-native run-ios
-```
+4. **Start the development server**
+   ```bash
+   expo start
+   ```
+
+5. **Run on device**
+   - Scan the QR code with Expo Go app (iOS/Android)
+   - Or use `expo run:android` / `expo run:ios` for development builds
+
 ## 📱 Usage
 
-1. Open the SmartGallery app
-2. Upload or select photos from your device to index them
-3. Type your search query in natural language (e.g., "photos of food", "sunset pictures")
-4. Browse through semantically matched results powered by AI
-5. Tap any image to view the full-size preview
+1. **Launch the App**: Open SmartGallery on your mobile device
+2. **Index Photos**: Grant gallery permissions and allow the app to index your photos
+3. **Search Semantically**: Type natural language queries such as:
+   - "photos of food"
+   - "sunset pictures"
+   - "people smiling"
+   - "outdoor activities"
+4. **Browse Results**: View semantically matched results powered by AI
+5. **Preview Images**: Tap any image for full-size preview with additional details
 
 ## 🔬 Technical Details
 
-The semantic search is powered by:
-- **Vision Transformer**: State-of-the-art image encoding
-- **BERT**: Robust natural language understanding
-- **Contrastive Learning**: Ensures proper alignment between image and text representations
-- **Vector Database**: Efficient similarity search and retrieval
+### Model Architecture
+- **Vision Transformer (ViT)**: State-of-the-art transformer-based image encoder
+- **BERT**: Bidirectional transformer for natural language understanding
+- **Contrastive Learning**: CLIP-style training ensures proper alignment between visual and textual representations
 
+### Performance Optimizations
+- **Efficient Embeddings**: Compressed vector representations for mobile storage
+- **Batch Processing**: Optimized inference for multiple images
+- **Lazy Loading**: Progressive image loading for smooth user experience
 
 ## 📧 Contact
 
-Manish Agarwal - [GitHub](https://github.com/mani5h-agarwal)
+**Manish Agarwal**
+- GitHub: [@mani5h-agarwal](https://github.com/mani5h-agarwal)
+- LinkedIn: [Connect with me](https://www.linkedin.com/in/manish-agarwal-34539a28a/)
+
+⭐ **Star this repo if you found it helpful!**
 
 ---
 
-⭐ Star this repo if you found it helpful!
+*Built with ❤️ using React Native Expo and cutting-edge AI*
